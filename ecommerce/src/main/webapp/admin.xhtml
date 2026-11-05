@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Administration</title>
+</h:head>
+
+<h:body>
+
+    <h2>Gestion des produits</h2>
+
+    <h:form>
+
+        <!-- Formulaire d'ajout -->
+        Nom :
+        <h:inputText value="#{produitBean.produit.nom}" />
+
+        <br/>
+
+        Description :
+        <h:inputText value="#{produitBean.produit.description}" />
+
+        <br/>
+
+        Prix :
+        <h:inputText value="#{produitBean.produit.prix}" />
+
+        <br/>
+
+        Stock :
+        <h:inputText value="#{produitBean.produit.stock}" />
+
+        <br/>
+
+        <h:commandButton value="Ajouter"
+                         action="#{produitBean.ajouter}" />
+
+        <hr/>
+
+        <!-- Liste des produits -->
+        <h:dataTable value="#{produitBean.liste}" var="p" border="1">
+
+            <h:column>
+                <f:facet name="header">Nom</f:facet>
+                #{p.nom}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">Prix</f:facet>
+                #{p.prix}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">Stock</f:facet>
+                #{p.stock}
+            </h:column>
+
+            <h:column>
+                <h:commandButton value="Supprimer"
+                    action="#{produitBean.supprimer(p)}" />
+            </h:column>
+
+        </h:dataTable>
+
+    </h:form>
+
+</h:body>
+</html>

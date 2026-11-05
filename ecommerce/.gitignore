@@ -1,0 +1,26 @@
+# Dossiers de compilation
+/build/
+/target/
+
+# Fichiers Eclipse
+.classpath
+.project
+.settings/
+
+# Fichiers IntelliJ IDEA
+.idea/
+*.iml
+
+# Fichiers compilés Java
+*.class
+
+# Logs
+*.log
+
+# Fichiers temporaires
+*.tmp
+*.bak
+
+# Système d'exploitation
+.DS_Store
+Thumbs.db
